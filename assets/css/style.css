@@ -1,0 +1,858 @@
+/***************************************************
+================ Master Stylesheet =================
+====================================================
+Template Name : 
+Template URL :
+Description : This is Responsive html5 template.
+Author : 
+Author URL :
+Version : 1.0
+Tags : 
+****************************************************
+*
+*
+**/
+/***************************************************
+=================== CSS INDEX ======================
+====================================================
+01. Google Font
+02. Reset CSS
+03. Animations
+04. Preloader
+05. Scroll To Top
+06. Navbar
+07. Input
+08. Button
+09. Header
+10. Heading
+11. Footer
+****************************************************
+*
+*
+**/
+/*==================================================
+===| 01. Google Font
+===================================================*/
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:400,500,700");
+/*==================================================
+===| 02. Reset CSS
+===================================================*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 100%; }
+
+html,
+body {
+  min-height: 100%; }
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #404040; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Slab", serif; }
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400; }
+  @media only screen and (max-width: 575px) {
+    p {
+      font-size: 15px; } }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+ul li {
+  list-style: none; }
+
+a,
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+  outline: none;
+  border: none; }
+
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+  outline: 0 solid; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+i {
+  font-style: normal; }
+
+figure {
+  margin: 0;
+  padding: 0; }
+
+.clear::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+section {
+  background-color: #fff; }
+
+.vh-100 {
+  height: 100vh; }
+
+.content__box {
+  padding-top: 100px;
+  padding-bottom: 100px; }
+  @media only screen and (max-width: 1199px) {
+    .content__box {
+      padding-top: 80px;
+      padding-bottom: 80px; } }
+  @media only screen and (max-width: 767px) {
+    .content__box {
+      padding-top: 60px;
+      padding-bottom: 60px; } }
+
+.footer__contentBox {
+  padding-top: 60px;
+  padding-bottom: 60px; }
+
+.fluid__contentBox {
+  margin-left: 4%;
+  margin-right: 4%; }
+  @media only screen and (max-width: 1399px) {
+    .fluid__contentBox {
+      margin-left: 0;
+      margin-right: 0; } }
+
+.gray-bg {
+  background-color: #F8F9FA; }
+
+::-moz-selection {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff; }
+
+::selection {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff; }
+
+.is-sticky {
+  position: relative;
+  z-index: 100000; }
+
+/*==================================================
+===| 03. Animations
+===================================================*/
+@-webkit-keyframes fadeInLeft30 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-30%, 0, 0);
+    transform: translate3d(-30%, 0, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes fadeInLeft30 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-30%, 0, 0);
+    transform: translate3d(-30%, 0, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+.fadeInLeft30 {
+  -webkit-animation-name: fadeInLeft30;
+  animation-name: fadeInLeft30; }
+
+@-webkit-keyframes fadeInRight30 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(30%, 0, 0);
+    transform: translate3d(30%, 0, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes fadeInRight30 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(30%, 0, 0);
+    transform: translate3d(30%, 0, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+.fadeInRight30 {
+  -webkit-animation-name: fadeInRight30;
+  animation-name: fadeInRight30; }
+
+/*==================================================
+===| 04. Preloader
+===================================================*/
+.loader {
+  background: #000;
+  background: radial-gradient(#222, #000);
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 99999; }
+
+.loader-inner {
+  bottom: 0;
+  height: 60px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px; }
+
+.loader-line-wrap {
+  animation: spin 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+  box-sizing: border-box;
+  height: 50px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transform-origin: 50% 100%;
+  width: 100px; }
+
+.loader-line {
+  border: 4px solid transparent;
+  border-radius: 100%;
+  box-sizing: border-box;
+  height: 100px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px; }
+
+.loader-line-wrap:nth-child(1) {
+  animation-delay: -50ms; }
+
+.loader-line-wrap:nth-child(2) {
+  animation-delay: -100ms; }
+
+.loader-line-wrap:nth-child(3) {
+  animation-delay: -150ms; }
+
+.loader-line-wrap:nth-child(4) {
+  animation-delay: -200ms; }
+
+.loader-line-wrap:nth-child(5) {
+  animation-delay: -250ms; }
+
+.loader-line-wrap:nth-child(1) .loader-line {
+  border-color: #eb4747;
+  height: 90px;
+  width: 90px;
+  top: 7px; }
+
+.loader-line-wrap:nth-child(2) .loader-line {
+  border-color: #ebeb47;
+  height: 76px;
+  width: 76px;
+  top: 14px; }
+
+.loader-line-wrap:nth-child(3) .loader-line {
+  border-color: #47eb47;
+  height: 62px;
+  width: 62px;
+  top: 21px; }
+
+.loader-line-wrap:nth-child(4) .loader-line {
+  border-color: #47ebeb;
+  height: 48px;
+  width: 48px;
+  top: 28px; }
+
+.loader-line-wrap:nth-child(5) .loader-line {
+  border-color: #4747eb;
+  height: 34px;
+  width: 34px;
+  top: 35px; }
+
+@keyframes spin {
+  0%,
+  15% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+/*==================================================
+===| 05. Scroll To Top
+===================================================*/
+.scrollToTop {
+  position: fixed;
+  display: none;
+  bottom: 15px;
+  right: 30px;
+  z-index: 100000;
+  color: #fff;
+  background-color: #000;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  line-height: 45px;
+  transition: all .3s; }
+  .scrollToTop:hover {
+    color: #fff;
+    background-color: #e49504; }
+  @media only screen and (max-width: 991px) {
+    .scrollToTop {
+      right: 20px; } }
+  @media only screen and (max-width: 767px) {
+    .scrollToTop {
+      bottom: 10px;
+      right: 10px; } }
+  @media only screen and (max-width: 575px) {
+    .scrollToTop {
+      height: 40px;
+      width: 40px;
+      line-height: 40px; } }
+  .scrollToTop i::before {
+    font-size: 20px;
+    padding: 0;
+    margin: 0; }
+
+/*==================================================
+===| 07. Input
+===================================================*/
+.form-control {
+  border: 2px solid #eee;
+  margin-bottom: 20px;
+  padding: 20px 15px;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: 0 none;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif; }
+  .form-control:focus {
+    border-color: rgba(251, 180, 49, 0.5);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: 0 none;
+    color: #222; }
+
+.textarea_parent {
+  position: relative;
+  overflow: hidden; }
+
+.textarea_parent > textarea:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: 0 none; }
+
+.textarea_parent > textarea {
+  min-height: 100px; }
+
+/*==================================================
+===| 08. Button
+===================================================*/
+.btn2 {
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 2px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14), 0 2px 8px 0 rgba(0, 0, 0, 0.1); }
+  .btn2:hover {
+    color: #333; }
+
+.btn2:hover,
+.btn2:focus {
+  text-decoration: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.14), 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid transparent; }
+
+.btn2:focus,
+.btn2.focus {
+  outline: 0; }
+
+.main__btn {
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  background: #fbb431;
+  font-family: "Roboto", sans-serif;
+  padding: 14px 30px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+  @media only screen and (max-width: 575px) {
+    .main__btn {
+      font-size: 13px;
+      padding: 12px 18px; } }
+  .main__btn:hover {
+    color: #222; }
+
+.main__btn:hover,
+.main__btn:focus {
+  text-decoration: none;
+  border: 1px solid transparent;
+  background: #e49504; }
+
+.main__btn:focus,
+.main__btn.focus {
+  outline: 0; }
+
+button.main__btn {
+  border: 1px solid transparent;
+  cursor: pointer; }
+  @media only screen and (max-width: 575px) {
+    button.main__btn {
+      font-size: 13px; } }
+  button.main__btn:hover {
+    border: 1px solid transparent; }
+
+.view__more {
+  font-size: 14px;
+  font-weight: 700;
+  color: #777;
+  transition: all .2s;
+  text-transform: uppercase; }
+  .view__more i {
+    transition: .2s;
+    color: #777; }
+  .view__more:hover {
+    color: #e49504; }
+  .view__more:hover i {
+    padding-left: 10px;
+    color: #e49504; }
+
+/*==================================================
+===| 09. Header
+===================================================*/
+/*==================================================
+===| 10. Heading
+===================================================*/
+/*==================================================
+===| 11. Footer
+===================================================*/
+/*==================================================
+===| 12. 
+===================================================*/
+.slider__padding {
+  padding-top: 230px;
+  padding-bottom: 230px; }
+  @media only screen and (max-width: 1399px) {
+    .slider__padding {
+      padding-top: 200px;
+      padding-bottom: 200px;
+      padding-left: 100px;
+      padding-right: 100px; } }
+  @media only screen and (max-width: 1023px) {
+    .slider__padding {
+      padding-top: 150px;
+      padding-bottom: 150px; } }
+  @media only screen and (max-width: 880px) {
+    .slider__padding {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      padding-left: 0px;
+      padding-right: 0px; } }
+  @media only screen and (max-width: 767px) {
+    .slider__padding {
+      padding-top: 60px;
+      padding-bottom: 60px; } }
+.slider__content {
+  padding: 10px 0px;
+  overflow: hidden; }
+  .slider__content h4 {
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8); }
+    @media only screen and (max-width: 1399px) {
+      .slider__content h4 {
+        font-size: 28px; } }
+    @media only screen and (max-width: 1199px) {
+      .slider__content h4 {
+        font-size: 25px; } }
+    @media only screen and (max-width: 1023px) {
+      .slider__content h4 {
+        font-size: 23px; } }
+    @media only screen and (max-width: 640px) {
+      .slider__content h4 {
+        font-size: 20px; } }
+    @media only screen and (max-width: 479px) {
+      .slider__content h4 {
+        font-size: 18px; } }
+    @media only screen and (max-width: 400px) {
+      .slider__content h4 {
+        margin-bottom: 10px; } }
+  .slider__content h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 54px;
+    margin-bottom: 20px;
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.8); }
+    @media only screen and (max-width: 1399px) {
+      .slider__content h2 {
+        font-size: 45px; } }
+    @media only screen and (max-width: 1199px) {
+      .slider__content h2 {
+        font-size: 40px; } }
+    @media only screen and (max-width: 1023px) {
+      .slider__content h2 {
+        font-size: 38px; } }
+    @media only screen and (max-width: 640px) {
+      .slider__content h2 {
+        font-size: 30px; } }
+    @media only screen and (max-width: 479px) {
+      .slider__content h2 {
+        font-size: 22px; } }
+    @media only screen and (max-width: 400px) {
+      .slider__content h2 {
+        margin-bottom: 10px; } }
+    .slider__content h2 span {
+      color: #FBB908; }
+  .slider__content p {
+    color: #fff;
+    margin-bottom: 30px; }
+    @media only screen and (max-width: 400px) {
+      .slider__content p {
+        margin-bottom: 15px; } }
+  .slider__content a.our__work {
+    border: 2px solid #FBB908;
+    margin-right: 10px; }
+    .slider__content a.our__work:hover {
+      background: inherit;
+      color: #FBB908; }
+  .slider__content a.main__btn.contact {
+    border: 2px solid #fff;
+    background: transparent; }
+    .slider__content a.main__btn.contact:hover {
+      border: 2px solid #FBB908;
+      background: #FBB908;
+      color: #fff; }
+.slider__imgbox--1 {
+  background: url(../img/hero-01.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+.slider__imgbox--2 {
+  background: url(../img/hero-02.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+.slider .owl-carousel .owl-nav button.owl-prev,
+.slider .owl-carousel .owl-nav button.owl-next {
+  height: 60px;
+  width: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 20px;
+  border-radius: 50%;
+  transition: .3s; }
+  .slider .owl-carousel .owl-nav button.owl-prev:hover,
+  .slider .owl-carousel .owl-nav button.owl-next:hover {
+    background: rgba(0, 0, 0, 0.2); }
+  @media only screen and (max-width: 880px) {
+    .slider .owl-carousel .owl-nav button.owl-prev,
+    .slider .owl-carousel .owl-nav button.owl-next {
+      display: none; } }
+.slider .owl-carousel .owl-nav button.owl-next {
+  left: auto;
+  right: 30px; }
+
+/*
+  <!-- |==========================================| -->
+  <!-- |=====|| slider start ||===============| -->
+  <section class="slider">
+    <div class="slider__box">
+      <div class="slider__carousel owl-carousel">
+        <div class="slider__item slider__imgbox--1">
+          <div class="slider__padding">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="slider__content">
+                    <h4 data-animation="fadeInDown" data-delay=".5s" data-duration=".7s" class="animated fadeInDown">we are the best</h4>
+                    <h2 data-animation="fadeInDown" data-delay=".5s" data-duration=".7s" class="animated fadeInDown"><span>Construction</span>
+                      experts</h2>
+                    <p data-animation="fadeInUp" data-delay="1s" data-duration=".7s" class="animated fadeInUp">Lorem
+                      ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, minima! Ratione totam harum, enim,
+                      pariatur explicabo amet voluptatum quasi fuga porro fugiat quod.</p>
+                    <a data-animation="fadeInUp" href="#" data-delay="1.5s" data-duration=".7s" class="main__btn our__work animated fadeInUp">Our Work</a>
+                    <a data-animation="fadeInUp" href="#" data-delay="1.7s" data-duration=".7s" class="main__btn contact animated fadeInUp">Contact Us</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider__item slider__imgbox--2">
+          <div class="slider__padding">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 offset-lg-4 text-right">
+                  <div class="slider__content">
+                    <h4 data-animation="fadeInDown" data-delay=".5s" data-duration=".7s" class="animated fadeInDown">we build </h4>
+                    <h2 data-animation="fadeInDown" data-delay=".5s" data-duration=".7s" class="animated fadeInDown"><span>your </span>dream </h2>
+                    <p data-animation="fadeInUp" data-delay="1s" data-duration=".7s" class="animated fadeInUp">Lorem
+                      ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, minima! Ratione totam harum, enim,
+                      pariatur explicabo amet voluptatum quasi fuga porro fugiat quod.</p>
+                    <a data-animation="fadeInUp" href="#" data-delay="1.5s" data-duration=".7s" class="main__btn our__work animated fadeInUp">Our Work</a>
+                    <a data-animation="fadeInUp" href="#" data-delay="1.7s" data-duration=".7s" class="main__btn contact animated fadeInUp">Contact Us</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- |=====|| slider end ||=================| -->
+  <!-- |==========================================| -->
+*/
+/*
+    ////////////////////////////////////////////////////
+    // 00. OwlCarousel for home page
+    var slider = $('.slider__carousel');
+    slider.owlCarousel({
+      loop: true,
+      animateIn: 'fadeIn',
+      animateOut: 'fadeOut',
+      autoplay: false,
+      nav: true,
+      dots: false,
+      autoplayTimeout: 8000,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    });
+
+
+    slider.on('translate.owl.carousel', function () {
+      var layer = $("[data-animation]");
+      layer.each(function () {
+        var slider_animation = $(this).data('animation');
+        $(this).removeClass('animated ' + slider_animation).css('opacity', '0');
+      });
+    });
+    $("[data-delay]").each(function () {
+      var animation_delay = $(this).data('delay');
+      $(this).css('animation-delay', animation_delay);
+    });
+    $("[data-duration]").each(function () {
+      var animation_dutation = $(this).data('duration');
+      $(this).css('animation-duration', animation_dutation);
+    });
+    slider.on('translated.owl.carousel', function () {
+      var layer = slider.find('.owl-item.active').find("[data-animation]");
+      layer.each(function () {
+        var slider_animation = $(this).data('animation');
+        $(this).addClass('animated ' + slider_animation).css('opacity', '1');
+      });
+    });
+*/
+/*==================================================
+===| Author CSS End
+===================================================*/
+/*==================================================
+===| Helper classes
+===================================================*/
+/*
+ * Hide visually and from screen readers
+ */
+.hidden {
+  display: none !important; }
+
+/*
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+  /* 1 */ }
+
+/*
+* Extends the .visuallyhidden class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit; }
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+.invisible {
+  visibility: hidden; }
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.clearfix:after {
+  clear: both; }
+
+/* ==========================================================================
+EXAMPLE Media Queries for Responsive Design.
+These examples override the primary ('mobile first') styles.
+Modify as content requires.
+========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */ }
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */ }
+/* ==========================================================================
+Print styles.
+Inlined to avoid the additional HTTP request:
+https://www.phpied.com/delay-loading-your-print-css/
+========================================================================== */
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important; }
+
+  a,
+  a:visited {
+    text-decoration: underline; }
+
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+ /*
+* Don't show links that are fragment identifiers,
+* or use the `javascript:` pseudo protocol
+*/
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: ""; }
+
+  pre {
+    white-space: pre-wrap !important; }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+ /*
+* Printing Tables:
+* http://css-discuss.incutio.com/wiki/Printing_Tables
+*/
+  thead {
+    display: table-header-group; }
+
+  tr,
+  img {
+    page-break-inside: avoid; }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2,
+  h3 {
+    page-break-after: avoid; } }
+/*==================================================
+===| Style CSS End
+===================================================*/
+
+/*# sourceMappingURL=style.css.map */

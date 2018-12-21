@@ -1,0 +1,310 @@
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//==| 
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+/*==================================================
+===| 12. 
+===================================================*/
+
+
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//==| Slider Css
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+.slider {
+
+  &__padding {
+    padding-top: 230px;
+    padding-bottom: 230px;
+
+    @include desktop2 {
+      padding-top: 200px;
+      padding-bottom: 200px;
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+
+    @include desktop4 {
+      padding-top: 150px;
+      padding-bottom: 150px;
+    }
+
+    @include laptop2 {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    @include tab1 {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__content {
+    padding: 10px 0px;
+    overflow: hidden;
+
+    h4 {
+      font-size: 30px;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+
+      @include desktop2 {
+        font-size: 28px;
+      }
+
+      @include desktop3 {
+        font-size: 25px;
+      }
+
+      @include desktop4 {
+        font-size: 23px;
+      }
+
+      @include tab2 {
+        font-size: 20px;
+      }
+
+      @include phone2 {
+        font-size: 18px;
+      }
+
+      @include phone2_middle {
+        margin-bottom: 10px;
+      }
+    }
+
+    h2 {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 54px;
+      margin-bottom: 20px;
+      text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.8);
+
+      @include desktop2 {
+        font-size: 45px;
+      }
+
+      @include desktop3 {
+        font-size: 40px;
+      }
+
+      @include desktop4 {
+        font-size: 38px;
+      }
+
+      @include tab2 {
+        font-size: 30px;
+      }
+
+      @include phone2 {
+        font-size: 22px;
+      }
+
+      @include phone2_middle {
+        margin-bottom: 10px;
+      }
+
+      span {
+        color: #FBB908;
+      }
+    }
+
+    p {
+      color: #fff;
+      margin-bottom: 30px;
+
+      @include phone2_middle {
+        margin-bottom: 15px;
+      }
+    }
+
+    a.our__work {
+      border: 2px solid #FBB908;
+      margin-right: 10px;
+
+      &:hover {
+        background: inherit;
+        color: #FBB908;
+      }
+    }
+
+    a.main__btn.contact {
+      border: 2px solid #fff;
+      background: transparent;
+
+      &:hover {
+        border: 2px solid #FBB908;
+        background: #FBB908;
+        color: #fff;
+      }
+    }
+  }
+
+  &__imgbox--1 {
+    background: url(../img/hero-01.jpg);
+    @include bg_fixed;
+  }
+
+  &__imgbox--2 {
+    background: url(../img/hero-02.jpg);
+    @include bg_fixed;
+  }
+
+  .owl-carousel .owl-nav button.owl-prev,
+  .owl-carousel .owl-nav button.owl-next {
+    height: 60px;
+    width: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 20px;
+    border-radius: 50%;
+    transition: .3s;
+    
+    &:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    @include laptop2 {
+      display: none;
+    }
+  }
+  
+  .owl-carousel .owl-nav button.owl-next {
+    left: auto;
+    right: 30px;
+  }
+}
+
+
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//==| Slider HTML
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+/*
+  <!-- |==========================================| -->
+  <!-- |=====|| slider start ||===============| -->
+  <section class="slider">
+    <div class="slider__box">
+      <div class="slider__carousel owl-carousel">
+        <div class="slider__item slider__imgbox--1">
+          <div class="slider__padding">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="slider__content">
+                    <h4 data-animation="fadeInDown" data-delay=".5s" data-duration=".7s" class="animated fadeInDown">we are the best</h4>
+                    <h2 data-animation="fadeInDown" data-delay=".5s" data-duration=".7s" class="animated fadeInDown"><span>Construction</span>
+                      experts</h2>
+                    <p data-animation="fadeInUp" data-delay="1s" data-duration=".7s" class="animated fadeInUp">Lorem
+                      ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, minima! Ratione totam harum, enim,
+                      pariatur explicabo amet voluptatum quasi fuga porro fugiat quod.</p>
+                    <a data-animation="fadeInUp" href="#" data-delay="1.5s" data-duration=".7s" class="main__btn our__work animated fadeInUp">Our Work</a>
+                    <a data-animation="fadeInUp" href="#" data-delay="1.7s" data-duration=".7s" class="main__btn contact animated fadeInUp">Contact Us</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider__item slider__imgbox--2">
+          <div class="slider__padding">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 offset-lg-4 text-right">
+                  <div class="slider__content">
+                    <h4 data-animation="fadeInDown" data-delay=".5s" data-duration=".7s" class="animated fadeInDown">we build </h4>
+                    <h2 data-animation="fadeInDown" data-delay=".5s" data-duration=".7s" class="animated fadeInDown"><span>your </span>dream </h2>
+                    <p data-animation="fadeInUp" data-delay="1s" data-duration=".7s" class="animated fadeInUp">Lorem
+                      ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, minima! Ratione totam harum, enim,
+                      pariatur explicabo amet voluptatum quasi fuga porro fugiat quod.</p>
+                    <a data-animation="fadeInUp" href="#" data-delay="1.5s" data-duration=".7s" class="main__btn our__work animated fadeInUp">Our Work</a>
+                    <a data-animation="fadeInUp" href="#" data-delay="1.7s" data-duration=".7s" class="main__btn contact animated fadeInUp">Contact Us</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- |=====|| slider end ||=================| -->
+  <!-- |==========================================| -->
+*/ 
+
+
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+//==| Slider JS
+//////////////////////////////////////////////////==|
+//////////////////////////////////////////////////==|
+/*
+    ////////////////////////////////////////////////////
+    // 00. OwlCarousel for home page
+    var slider = $('.slider__carousel');
+    slider.owlCarousel({
+      loop: true,
+      animateIn: 'fadeIn',
+      animateOut: 'fadeOut',
+      autoplay: false,
+      nav: true,
+      dots: false,
+      autoplayTimeout: 8000,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    });
+
+
+    slider.on('translate.owl.carousel', function () {
+      var layer = $("[data-animation]");
+      layer.each(function () {
+        var slider_animation = $(this).data('animation');
+        $(this).removeClass('animated ' + slider_animation).css('opacity', '0');
+      });
+    });
+    $("[data-delay]").each(function () {
+      var animation_delay = $(this).data('delay');
+      $(this).css('animation-delay', animation_delay);
+    });
+    $("[data-duration]").each(function () {
+      var animation_dutation = $(this).data('duration');
+      $(this).css('animation-duration', animation_dutation);
+    });
+    slider.on('translated.owl.carousel', function () {
+      var layer = slider.find('.owl-item.active').find("[data-animation]");
+      layer.each(function () {
+        var slider_animation = $(this).data('animation');
+        $(this).addClass('animated ' + slider_animation).css('opacity', '1');
+      });
+    });
+*/ 
